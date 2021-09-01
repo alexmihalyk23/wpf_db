@@ -5,8 +5,71 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpf_db"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Магазин" Height="450" Width="800" IsTabStop="True" BorderBrush="Red" OpacityMask="#FF700000" WindowStyle="None" ResizeMode="NoResize" MouseDown="Window_MouseDown_1">
     <Grid>
-        
+       
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180*"/>
+                <ColumnDefinition Width="647*"/>
+            </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1" Name="GridPrincipal" Margin="0,50,0,0">
+                
+        </Grid>
+        <Grid Grid.Column="1" VerticalAlignment="Top" Height="45">
+            <StackPanel  Margin="0 0 10 0" HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button Background="{x:Null}" BorderBrush="Black" Foreground="#DD000000" Click="Button_Click" Margin="0,0,10,0" Width="49">
+                    <materialDesign:PackIcon Kind="Login"/>
+                </Button>
+                <Button Background="White" Foreground="#DD000000" BorderBrush="Black" Click="Button_Click_1">
+                    <materialDesign:PackIcon Kind="Power"  VerticalAlignment="Center" HorizontalAlignment="Right" />
+                </Button>
+                
+            </StackPanel>
+                
+           
+
+        </Grid>
+        <Grid Background="#FF222222">
+            <ListView x:Name="ListVewShanged" Foreground="LightGray" Margin="0,0,0,0" SelectionChanged="ListVewShanged_SelectionChanged">
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+
+                        <materialDesign:PackIcon Kind="Home" Width="30" Height="30" VerticalAlignment="Center"/>
+                        <TextBlock Text="Домой" FontSize="22" Margin="20 0"/>
+                        
+                    </StackPanel>
+                    
+
+                </ListViewItem>
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+
+                        <materialDesign:PackIcon Kind="Computer" Width="30" Height="30" VerticalAlignment="Center"/>
+                        <TextBlock Text="Товары" FontSize="22" Margin="20 0"/>
+
+                    </StackPanel>
+
+
+                </ListViewItem>
+                <ListViewItem Height="60">
+                    <StackPanel Orientation="Horizontal">
+
+                        <materialDesign:PackIcon Kind="Basket" Width="30" Height="30" VerticalAlignment="Center"/>
+                        <TextBlock Text="Корзина" FontSize="22" Margin="20 0"/>
+
+                    </StackPanel>
+
+
+                </ListViewItem>
+
+
+                        
+
+                   
+
+            </ListView>
+            </Grid>
+       
     </Grid>
 </Window>

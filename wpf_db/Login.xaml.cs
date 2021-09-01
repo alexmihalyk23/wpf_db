@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,11 +23,38 @@ namespace wpf_db
         public Login()
         {
             InitializeComponent();
+            
+
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
+
+        private void LogIn_Click(object sender, RoutedEventArgs e)
+        {
+            var context = new StoreEntities();
+            
+
+
+            if (context.User.Where(c => c.login == login.Text && c.password.Equals(passwordBox.Password)).SingleOrDefault() != null) {
+                Hide();
+                MainWindow mainw = new MainWindow();
+                mainw.Show();
+            }
+            
+            
+            
+            
+        }
+
+
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
     }
 }

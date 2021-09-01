@@ -6,25 +6,18 @@
         xmlns:local="clr-namespace:wpf_db"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        FontFamily="{DynamicResource MaterialDesignFont}"   WindowStartupLocation="CenterScreen" Width="400" Height="480"  ResizeMode="NoResize" UseLayoutRounding="False" Background="#FF3B5CAA" >
+        FontFamily="{DynamicResource MaterialDesignFont}"   WindowStartupLocation="CenterScreen" Width="400" Height="480"  ResizeMode="NoResize" UseLayoutRounding="False" Background="#FF3B5CAA" WindowStyle="None" MouseDown="Window_MouseDown" >
     <Grid>
         <Border Background="White" Margin="10 20" CornerRadius="5">
         <StackPanel Margin="20">
 
-            
-
-                <ComboBox VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingHintComboBox}" materialDesign:HintAssist.Hint="Доступ" Background="White" Foreground="Black" FontFamily="Microsoft Sans Serif" FontSize="16">
-                    <ComboBoxItem Content="Администратотр"/>
-                    <ComboBoxItem Content="Пользователь"/>
-
-                </ComboBox>
-               
 
 
-            <TextBox  Margin="10 40" FontSize="24" FontFamily="Cambria" materialDesign:HintAssist.Hint="Login"/>
+            <TextBox Name="login" Margin="10 40" FontSize="24" FontFamily="Cambria" materialDesign:HintAssist.Hint="Login"/>
+                <PasswordBox Name="passwordBox" Margin="10 0" FontSize="24" FontFamily="Cambira" materialDesign:HintAssist.Hint="Password"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button Margin="15 10" Content="Выход" Click="Button_Click"/>
-                    <Button Margin="15 10" Content="Войти"/>
+                    <Button Name="Exit" Margin="15 10" Content="Выход" Click="Exit_Click"/>
+                    <Button Name="LogIn" Margin="15 10"  Content="Войти" Click="LogIn_Click"/>
                 </StackPanel>
         </StackPanel>
         </Border>
